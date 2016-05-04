@@ -1,18 +1,22 @@
 <template>
   <div class="top-box">
-    <Navbar></Navbar>
     <router-view></router-view>
-    <Toaster></Toaster>
   </div>
 </template>
 
 <script>
 import store from '../vuex/store'
-import Navbar from './Navbar'
-import Toaster from './Toaster'
 
 export default {
-  store,
-  components: { Navbar,Toaster }
+  store
 }
 </script>
+<style lang="sass">
+    @import '../assets/scss/iconfont/iconfont.css';
+    @import '../assets/scss/CV.scss';
+    .index{
+        width: 100%;
+        background-color: #fff;
+        margin-top: 40%;
+    }
+</style>
