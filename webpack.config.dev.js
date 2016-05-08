@@ -10,7 +10,7 @@ module.exports = {
     './src/index'
   ],
   output: {
-    path: process.cwd(),
+    path: process.cwd() + '/dist',
     filename: 'bundle.js',
     publicPath: '/'
   },

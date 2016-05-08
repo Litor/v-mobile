@@ -8,6 +8,10 @@ var port = process.env.PORT || 8400
 app.use(express.static(path.join(__dirname, 'dist')))
 app.use(favicon(path.join(__dirname, 'dist', 'favicon.ico')))
 
+app.get('/build', function(req, res) {
+  return res.sendFile(__dirname + '/build/index.html')
+})
+
 app.get('/*', function(req, res) {
   return res.sendFile(__dirname + '/dist/index.html')
 })

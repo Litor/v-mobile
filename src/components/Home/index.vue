@@ -1,25 +1,81 @@
 <template>
-  <header>
-    <button role="back"></button>
-    <h2>就业市场</h2>
-    <button role="next">发布消息</button>
+  <header class="bar bar-nav">
+    <a class="icon icon-refresh pull-right"></a>
+    <h1 class="title">Mailboxes</h1>
   </header>
-  <main>
-    <carousel>
-      <slider>
-        <img src="http://placehold.it/1200x400?text=one">
-        <div class="carousel-caption">
-          2016苏宁专场招聘会将在我校开展
-        </div>
-      </slider>
-      <slider>
-        <img src="http://placehold.it/1200x400?text=two">
-      </slider>
-      <slider>
-        <img src="http://placehold.it/1200x400?text=three">
-      </slider>
-    </carousel>
-  </main>
+  <div class="bar bar-footer">
+    <a class="icon icon-compose pull-right" href="#composeModal"></a>
+    <small class="updated-text">Updated just now</small>
+  </div>
+  <div class="content">
+    <ul class="table-view">
+      <li class="table-view-cell media">
+        <a class="navigate-right" href="inbox.html" data-transition="slide-in">
+          <span class="media-object icon icon-pages pull-left"></span>
+          <div class="media-body">
+            All inboxes
+          </div>
+        </a>
+      </li>
+      <li class="table-view-cell media">
+        <a class="navigate-right" href="inbox.html" data-transition="slide-in">
+          <span class="media-object icon icon-person pull-left"></span>
+          <div class="media-body">
+            Personal email
+          </div>
+        </a>
+      </li>
+      <li class="table-view-cell media">
+        <a class="navigate-right" href="inbox.html" data-transition="slide-in">
+          <span class="media-object icon icon-star-filled pull-left"></span>
+          <div class="media-body">
+            Starred
+          </div>
+        </a>
+      </li>
+      <li class="table-view-cell media">
+        <a class="navigate-right" href="inbox.html" data-transition="slide-in">
+          <span class="media-object icon icon-trash pull-left"></span>
+          <div class="media-body">
+            Trash
+          </div>
+        </a>
+      </li>
+    </ul>
+    <h5 class="content-padded">Other accounts</h5>
+    <ul class="table-view">
+      <li class="table-view-cell media">
+        <a class="navigate-right" href="inbox.html" data-transition="slide-in">
+          <span class="media-object icon icon-more pull-left"></span>
+          <div class="media-body">
+            Misc
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- /.content -->
+  <!-- Compose modal -->
+  <div id="composeModal" class="modal">
+    <header class="bar bar-nav">
+      <a class="btn btn-link pull-right" href="#composeModal">
+        <strong>Send</strong>
+      </a>
+      <a class="btn btn-link pull-left" href="#composeModal">
+          Cancel
+        </a>
+      <h1 class="title">New message</h1>
+    </header>
+    <div class="content">
+      <form class="input-group">
+        <input type="text" placeholder="To:">
+        <input type="email" placeholder="From:">
+        <input type="text" placeholder="Subject:">
+        <textarea rows="20"></textarea>
+      </form>
+    </div>
+  </div>
+  <!-- /.modal -->
 </template>
 <script>
 import { carousel, slider } from 'vue-strap'
@@ -30,3 +86,17 @@ export default {
   }
 }
 </script>
+<style lang="sass">
+.updated-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 10px 0;
+  font-size: 11px;
+  text-align: center;
+}
+
+.table-view-cell .icon {
+  color: #007aff;
+}
+</style>

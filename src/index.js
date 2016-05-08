@@ -6,11 +6,9 @@ import store from './vuex/store'
 import configRouter from './routes'
 import filters from './utils/filters'
 import App from './components/App.vue'
-import 'font-awesome/css/font-awesome.css'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'jackblog-sass/dist/index.css'
-import 'vue-toastr/dist/vue-toastr.css'
-import './assets/styles/index.css'
+import './assets/styles/ratchet.css'
+import './assets/styles/ratchet-theme-ios.css'
+import './assets/js/ratchet.js'
 
 Vue.use(VueRouter)
 Vue.use(VueValidator)
